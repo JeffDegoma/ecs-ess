@@ -1,0 +1,19 @@
+
+{
+    "cluster": "seton_cluser",
+    "serviceName": "nginx",
+    "taskDefinition": "@@TASKDEFINITION_ARN@@",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "@@TARGET_GROUP_ARN@@",
+            "containerName": "nginx",
+            "containerPort": 80
+        }
+    ],
+    "desiredCount": 1,
+    "role": "/",
+    "deploymentConfiguration": { 
+        "maximumPercent": 100,
+        "minimumHealthyPercent": 0
+    }
+}
